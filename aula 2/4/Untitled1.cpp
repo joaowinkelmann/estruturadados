@@ -1,16 +1,15 @@
 #include <stdio.h>
 
 int main(){
-	int i = 10;
-	int j;
+	int i;
 	
-	j = i++; //atribui, depois incrementa
-	printf("%d\n", i);
-	printf("%d\n", j);
-	
-	j = ++i; //incrementa, depois atribui
-	printf("%d\n", i);
-	printf("%d\n", j);
-	
+	for(i=0;i<10;i++){
+		if (i==5){
+			break;
+		}
+		
+		printf("%d", i);
+	}
+	printf("acabou\n");
 	return 0;
 }
