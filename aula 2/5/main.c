@@ -15,16 +15,16 @@ int main(){
 	
 	switch (op){
 		case '+':
-			printf("%f", x+y);
+			printf("%.2f", x+y);
 			break;
 		case '-':
-			printf("%f", x-y);
+			printf("%.2f", x-y);
 			break;
 		case '*':
-			printf("%f", x*y);
+			printf("%.2f", x*y);
 			break;
 		case '/':
-			printf("%f", x/y);
+			printf("%.2f", x/y);
 			break;
 		default:
 			printf("Operacao invalida");
