@@ -1,18 +1,19 @@
 #include <stdio.h>
+#define PI 3.14592
 
-float c_para_f(float c){
-	float f;
-	f = 1.8 * c + 32;
-	
-	return f;
-	
+float calculaCilindro(float raio, float altura, float &volume){
+	volume = (PI*raio*raio*altura);
+	return volume;
 }
 
 int main(){
-	float f, c;
-	printf("Insira o valor em celsius:\n");
-	scanf("%f", &c);
-	f = c_para_f(c);
-	printf("O resultado é igual a %f", f);
-	return 0;
+	float raio, altura, volume;
+	printf("Insira o raio do cilindro:\n");
+	scanf("%f", &raio);
+	printf("Insira a altura do cilindro:\n");
+	scanf("%f", &altura);
+	calculaCilindro(raio, altura, volume);
+	
+	printf("Volume: %f", volume);
+	return 0;	
 }
