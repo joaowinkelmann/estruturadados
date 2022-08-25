@@ -2,21 +2,20 @@
 #include <stdlib.h>
 
 int main(void){
-	int n, i;
-	float xi;
-	float s = 0.0f;
+	float x;
+	int j;
+	float i[5];
 	
-	printf("Insira o numero de valores:\n");
-	scanf("%d", &n);
+	printf("Insira 5 numeros para serem armazenados em um vetor:\n");
 	
-	printf("Agora insira os valores:\n");
-	
-	for(i=0;i<n; ++i){
-		scanf("%f", &xi);
-		s += xi;
+	for(j=0; j<5; j++){
+		scanf("%f", &x);
+		i[j] = x;
 	}
-	float m = s/n;
-	printf("Media: %.2f\n", m);
+	
+	for(j=0; j<5; j++){
+		printf("%f\n", i[j]);
+	}
 	
 	return 0;
 }
