@@ -17,5 +17,5 @@ int main(void){
 	fclose(pont_arq);
 	printf("Arquivo editado com sucesso");
 	system("pause");
-	return
+	return 0;
 }
