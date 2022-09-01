@@ -4,8 +4,6 @@
 int main(){
 	int aux = g_valor();
 	
-	printf("\n %d", aux);
-	getch();
-	
+	printf("res: %d ", aux);
 	return 0;
 }
