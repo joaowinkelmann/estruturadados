@@ -1,8 +1,9 @@
+//Exercício 6
 //Calculadora em linha de comando
 
-// - Variáveis (check)
+// - Variáveis
 // - Operadores 
-// - I/O de dados (check)
+// - Entrada e saída de dados
 // - Comandos condicionais 
 
 #include <stdio.h>
@@ -54,7 +55,5 @@ int main(void){
         default:
             printf("Erro: O operador não é válido.");
             exit(1);
-    }
-
-    
+    }    
 }
