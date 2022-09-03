@@ -1,9 +1,9 @@
 //Calculadora em linha de comando
 
-// - Variáveis
-// - Operadores
-// - I/O de dados
-// - Comandos condicionais
+// - Variáveis (check)
+// - Operadores 
+// - I/O de dados (check)
+// - Comandos condicionais 
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -28,7 +28,32 @@ int main(void){
     printf("Agora, entre com o segundo valor a ser analisado\n");
     scanf("%lf", &y);
 
-    printf("%lf %c %lf", x, op, y);
+    // Debug para ver os valores
+    // printf("%lf %c %lf", x, op, y);
 
+    switch (op){
+        case '+':
+            printf("Adição");
+            break;
+        case '-':
+            printf("Subtração");
+            break;
+        case '*':
+            printf("Multiplicação");
+            break;
+        case '/':
+            if(y == 0){
+                printf("Erro: Impossível dividir por zero (%.2lf/%.2lf)\n", x, y);
+                exit(1);
+            }
+            printf("Divisão");
+            break;
+        case ('e' || 'r'):
+            printf("Expo");
+            break;
+        default:
+            printf("Erro: O operador não é válido.");
+    }
 
+    
 }
