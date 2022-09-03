@@ -21,7 +21,7 @@ int main(void){
     scanf("%lf", &x);
 
     //recebe o operador
-    printf("Entre com o operador desejado: \n\n+ -> Adição\n- -> Subtração\n* -> Multiplicação\n/ -> Divisão\n(p ou e) -> Exponencial (x^y)\n");
+    printf("Entre com o operador desejado: \n\n+ -> Adição\n- -> Subtração\n* -> Multiplicação\n/ -> Divisão\ne -> Exponencial (x^y)\n");
     scanf("%s", &op);
 
     //recebe o segundo valor
@@ -33,26 +33,27 @@ int main(void){
 
     switch (op){
         case '+':
-            printf("Adição");
+            printf("\nResultado: %.2lf (%.2lf + %.2lf)", (x+y), x, y);
             break;
         case '-':
-            printf("Subtração");
+            printf("\nResultado: %.2lf (%.2lf - %.2lf)", (x-y), x, y);
             break;
         case '*':
-            printf("Multiplicação");
+            printf("\nResultado: %.2lf (%.2lf * %.2lf)", (x*y), x, y);
             break;
         case '/':
             if(y == 0){
                 printf("Erro: Impossível dividir por zero (%.2lf/%.2lf)\n", x, y);
                 exit(1);
             }
-            printf("Divisão");
+            printf("\nResultado: %.2lf (%.2lf / %.2lf)", (x/y), x, y);
             break;
-        case ('e' || 'r'):
-            printf("Expo");
+        case 'e':
+            printf("\nResultado: %.2lf (%.2lf ^ %.2lf)", pow(x, y), x, y);
             break;
         default:
             printf("Erro: O operador não é válido.");
+            exit(1);
     }
 
     
