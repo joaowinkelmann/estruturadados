@@ -7,7 +7,6 @@
 int main(void){
 	FILE *pont_texto;
     char str_entrada[100];
-    char str_saida[200];
     char c;
     int vogais = 0;
 	pont_texto = fopen("textousuario.txt", "a");
@@ -28,7 +27,6 @@ int main(void){
 
     printf("Visualização do arquivo:\n\n");
     pont_texto = fopen("textousuario.txt", "r");
-
    while((c = fgetc(pont_texto))!=EOF) {
         if(c == 'a' || c == 'A' || c == 'e' || c == 'E' || c == 'i' || c == 'I' || c == 'o' || c == 'O' || c == 'u' || c == 'U'){
             vogais++;
