@@ -1,6 +1,6 @@
 ## Comandos exercícios práticos
 
-6. Construa um algoritmo na linguagem C que contemple a utilização dos seguintes itens: 
+6. Construa um algoritmo na linguagem C que contemple a utilização dos seguintes itens: (check)
 - Variáveis
 - Operadores
 - I/O de dados
