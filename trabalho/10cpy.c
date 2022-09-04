@@ -1,4 +1,4 @@
-//
+//Contador de vogais
 //Escolher entre as funções de abrir e fechar arquivos, estruturação de dados em arquivos de texto e arquivos em modo binário para criar o seu algoritmo.
 
 #include <stdio.h>
@@ -36,7 +36,7 @@ int main(void){
         putchar(c);
     }
 
-    printf("\n\n Quantidade de vogais encontrada no arquivo: %d", vogais);
+    printf("\n\n Existem %d vogais no arquivo de texto", vogais);
 
     fclose(pont_texto);
     return 0;

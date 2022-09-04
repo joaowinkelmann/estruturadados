@@ -20,5 +20,5 @@
 - Vetores
 - Matrizes
 
-10. Seguintes itens:
-- Arquivos -> Escolher entre as funções de abrir e fechar arquivos, estruturação de dados em arquivos de texto e arquivos em modo binário para criar o seu algoritmo.
+10. Seguintes itens: (check)
+- Arquivos -> Escolher entre as funções de abrir e fechar arquivos, estruturação de dados em arquivos de texto e arquivos em modo binário para criar o seu algoritmo. 
