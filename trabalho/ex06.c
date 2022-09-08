@@ -12,7 +12,7 @@
 #include <locale.h>
 
 int main(void){
-    setlocale(LC_ALL,"");
+    setlocale(LC_ALL,"Portuguese");
     double x, y;
     char op;
     printf("Seja bem vindo a calculadora em CLI\n");
