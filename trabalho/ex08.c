@@ -4,7 +4,6 @@
 
 void Exponencial(int *v){
 	int i,j,aux;
-	int troca = 0;
 	for(i=0;i< MAX; i++){
         v[i] *= (5*v[i])/2;
 	}
