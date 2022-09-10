@@ -51,7 +51,7 @@ int main() {
     for(i=0; i<MAX; i++){
         printf("%.2f |\t", vet[i]);
     }
-
+    return 0;
 }
 
 
