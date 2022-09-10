@@ -35,6 +35,7 @@ int main(void){
                     x = y;
                     y = z;
                 } while (maxFib >= z);
+
                 break;
             case 'p':
                 int num;
@@ -42,11 +43,12 @@ int main(void){
                 bool primo;
                 printf("Opção 'Números primos' selecioanda.\nEntre com um número para ser o limite da operação:\n");
                 scanf("%d", &num);
-                if (num <= 0){
-                    printf("O número precisa ser maior que 0\nAssumindo como parâmetro o número 10");
+
+                if (num <= 2){
+                    printf("O número precisa ser maior que 2\nAssumindo como parâmetro o número 10\n");
                     num = 10;
                 }
-                i = 0;
+
                 printf("Números primos menores do que %d:\n\n", num);
 
                 while (num >=  2){
@@ -64,6 +66,7 @@ int main(void){
                     }
                     num--;
                 }
+
                 break;
             case 's':
                 continue;
