@@ -1,37 +1,32 @@
-// Exercício 8
-// DESCRIÇÃO
-// - Funções
-// - Ponteiros
-
 #include <stdio.h>
 #include <locale.h>
-#define MAX 5
+#define MAX 3
 
-float encontraRaizes(float v, float *res){
-    int i;
-    float aux;
-    for(i=0; i < MAX; i++){
-        res[i] =v[i];
-    }
+void Exponencial(int *v){
+	int i,j,aux;
+	int troca = 0;
+	for(i=0;i< MAX; i++){
+        v[i] *= (5*v[i])/2;
+	}
 }
 
 int main(void){
-    float vet[MAX];
-    float result[MAX];
-    int i;
     setlocale(LC_ALL, "");
-    printf("Insira %d valores para receber as suas raízes", MAX);
-    for(i=0; i < MAX; i++){
-        printf("Insira o valor [%d]", i);
-        scanf("%d", &vet[i]);
-    }
+	int i, vet[MAX];
+    printf("Insira %d valores para serem calculados\n\n", MAX);
 
-    encontraRaizes(vet, result);
-
-    //retorna o vetor para o usuario
-    for(i=0; i < MAX; i++){
-        printf("%lf \t| ", vet[i]);
-    }
-
-    return 0;
+	for(i=0;i < MAX; i++){
+		printf("Informe o valor %d\n", (i+1));
+		scanf("%d", &vet[i]);
+	}
+	
+	Exponencial(vet);
+	
+	printf("\nResultado da operação:\n\n");
+	
+	for(i=0;i < MAX; i++){
+		printf("%d\n", vet[i]);
+	}
+	
+	return 0;
 }
