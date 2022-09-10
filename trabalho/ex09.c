@@ -6,45 +6,49 @@
 
 #include <stdio.h>
 #include <locale.h>
+#define MAX 5
 
-void Diag_sec (float M[][5]){
+void Diag_sec (float M[][MAX], float *v){
     int i, j;
     int k = 0;
-    float V[5];
-    for(i=0; i<5; i++){
-        for(j=0; j<5; j++){
-            if(i+j==4)
-            V[k] = M[i][j];
-            k++;
+    for(i=0; i<MAX; i++){
+        for(j=0; j<MAX; j++){
+            if(i+j==(MAX - 1)){
+                v[k] = M[i][j];
+                k++;
+            }
         }
     }
-
-    for(i=0;i<5;i++){
-        printf("%.2f ", V[i]);
-    }
-
 }
 
 int main() {
-    setlocale(LC_ALL, "Portuguese");
+    setlocale(LC_ALL, "");
 
-    float M[5][5];
+    float M[MAX][MAX];
+    float vet[MAX];
     int i, j;
 
-    for(i=0; i<5; i++){
-        for(j=0; j<5; j++){
+    for(i=0; i<MAX; i++){
+        for(j=0; j<MAX; j++){
             printf("Digite um número para a posicao %d %d", i, j);
             scanf("%f", &M[i][j]);
         }
     }
     
-    Diag_sec(M);
+    Diag_sec(M, vet);
 
-    for(i=0; i<5; i++){
-        for(j=0; j<5; j++){
+    //imprime a matriz informada pelo usuario
+    for(i=0; i<MAX; i++){
+        for(j=0; j<MAX; j++){
             printf("%.2f |\t", M[i][j]);
         }
         printf("\n");
+    }
+
+    //imprime o vetor gerado
+    printf("\nVetor formado pela diagonal secundária da matriz:\n\n");
+    for(i=0; i<MAX; i++){
+        printf("%.2f |\t", vet[i]);
     }
 
 }
