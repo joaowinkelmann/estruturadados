@@ -1,5 +1,5 @@
-//Exercício 9
-//Diagonal secundária de uma matriz em um vetor
+// Exercício 9
+// Encontrar a diagonal secundária de uma matriz e armazenar em um vetor
 // 9. Seguintes itens:
 // - Vetores
 // - Matrizes
@@ -30,7 +30,7 @@ int main() {
 
     for(i=0; i<MAX; i++){
         for(j=0; j<MAX; j++){
-            printf("Digite um número para a posicao %d %d", i, j);
+            printf("Digite um número para a posicao [%d, %d]: ", i, j);
             scanf("%f", &M[i][j]);
         }
     }
@@ -38,6 +38,7 @@ int main() {
     Diag_sec(M, vet);
 
     //imprime a matriz informada pelo usuario
+    printf("\nMatriz informada:\n\n");
     for(i=0; i<MAX; i++){
         for(j=0; j<MAX; j++){
             printf("%.2f |\t", M[i][j]);
