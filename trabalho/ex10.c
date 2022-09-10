@@ -1,5 +1,7 @@
-//Contador de vogais
-//Escolher entre as funções de abrir e fechar arquivos, estruturação de dados em arquivos de texto e arquivos em modo binário para criar o seu algoritmo.
+// Exercício 10
+// Contador de vogais
+// Escolher entre as funções de abrir e fechar arquivos, estruturação de dados em arquivos de texto
+// e arquivos em modo binário para criar o seu algoritmo.
 
 #include <stdio.h>
 #include <stdlib.h>

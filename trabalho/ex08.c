@@ -1,3 +1,8 @@
+// Exercício 8
+// Programa que exponencializa os valores informados pelo usuário através de uma função e um ponteiro
+// - Funções
+// - Ponteiros
+
 #include <stdio.h>
 #include <locale.h>
 #define MAX 3

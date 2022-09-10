@@ -1,6 +1,5 @@
-//Exercício 6
+// Exercício 6
 //Calculadora em linha de comando
-
 // - Variáveis
 // - Operadores 
 // - Entrada e saída de dados
