@@ -76,5 +76,5 @@ int main(void){
         }
         scanf("%c", &decisao);
     }
-    
+    return 0;
 }
