@@ -19,6 +19,13 @@ void criarLista (struct ListaSimplesEnc *pList){
 	pList -> prim = NULL; //recebe atribuindo (ponteiro pList recebe a variavel 'prim', esta que possui o valor NULL
 }
 
+void removeLista (struct ListaSimplesEnc *pList){
+	struct Nodo *p;
+	for(p = pList -> prim; p != NULL; p = p->prox){
+		free(*p -> info);
+	}
+}
+
 void mostrarLista(struct ListaSimplesEnc *pList){
 	struct Nodo *p;
 	for(p = pList -> prim; p != NULL; p = p->prox){
@@ -69,6 +76,10 @@ int main(void){
 				break;
 			case 3: //sair
 				exit(0);
+				break;
+			case 4: //remover
+				removeLista(&minhaLista);
+				break;
 		}
 	}
 	return 0;
