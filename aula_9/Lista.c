@@ -11,7 +11,7 @@ typedef struct  { //criação da estrutura da lista
 	int tam;
 } Lista;
 
-void inserirInicio(Lista  *lista, int valor){
+void inserirInicio(Lista *lista, int valor){
 	//parametro o endereço da lista, e o tipo de valor (Lista = estrutura, lista = ponteiro)
 	No *novo = (No*)malloc(sizeof(No)); //comando para alocação de memória
 	novo->valor = valor; //(*novo).valor = valor
@@ -46,7 +46,7 @@ void inserirFim(Lista *lista, int valor){
 
 void imprimir(Lista *lista){
 	No *inicio = lista->inicio;
-	printf("Tamanho da  lista: %d", lista->tam);
+	printf("Tamanho da  lista: %d\n\n", lista->tam);
 	while(inicio != NULL){
 		printf("%d ", inicio->valor);
 		inicio = inicio->proximo;
@@ -56,7 +56,7 @@ void imprimir(Lista *lista){
 
 void remover(Lista *lista, int valor){
 	No *inicio = lista->inicio;
-	No * noARemover = NULL;
+	No *noARemover = NULL;
 	
 	if(inicio != NULL  && lista->inicio->valor == valor){
 		noARemover = lista->inicio;
@@ -76,20 +76,53 @@ void remover(Lista *lista, int valor){
 			}
 		}
 	}
+	lista->tam--;
 }
 
 
 int main(void){
-	struct Lista minhaLista;
-	char op;
+	Lista lista, listaI, listaP;
+	int op;
 	int val;
-	printf("Insira a operação desejada:");
-	scanf("%s", &op);
+	
+	//inicialização das listas
+	lista.inicio = NULL;
+	lista.fim = NULL;
+	lista.tam = 0;
+	
+	listaI.inicio = NULL;
+	listaI.fim = NULL;
+	listaI.tam = 0;
+	
+	listaP.inicio = NULL;
+	listaP.fim = NULL;
+	listaP.tam = 0;
+	
+	printf("Insira a operacao desejada:");
+	do{
+	printf("\n1- Inserir no inicio\n2- Imprimir\n3- Inserir no Fim\n4- Remover um valor\n5- Sair\n");
+	scanf("%d", &op);
 	switch (op){
 		case 1:
 			printf("Insira o valor a ser inserido: ");
 			scanf("%d", &val);
-			inserirInicio(&minhaLista, val);
+			inserirInicio(&lista, val);
+			break;
+		case 2:
+			imprimir(&lista);
+			break;
+		case 3:
+			printf("Insira o valor a ser inserido no fim: ");
+			scanf("%d", &val);
+			inserirFim(&lista, val);
+			break;
+		case 4:
+			printf("Insira um valor a ser removido: ");
+			scanf("%d", &val);
+			remover(&lista, val);
 			break;
 	}
+	
+	}while(op != 5);
+	return 0;	
 }
