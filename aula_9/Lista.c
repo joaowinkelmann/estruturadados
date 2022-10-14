@@ -11,6 +11,36 @@ typedef struct  { //criação da estrutura da lista
 	int tam;
 } Lista;
 
+No* removerPrimeiroNO(Lista *lista){
+	if(lista->inicio != NULL){
+		No *no = lista->inicio;
+		lista->inicio = no->proximo;
+		lista->tam--;
+		if(lista->inicio == NULL){
+			lista->fim = NULL;
+		}
+		return no;
+	}
+	else{
+		return NULL;
+	}
+}
+
+void dividirLista(Lista *lista, Lista *listaI, Lista *listaP){
+	No *removido;
+	while(lista->inicio != NULL){
+		removido = removerPrimeiroNO(lista);
+		inserirFim(listaI, removido->valor);
+		free(removido);
+		
+		removido = removerPrimeiroNO(lista);
+		if(removido!= NULL){
+			inserirFim(listaP, removido->valor);
+			free(removido);
+		}
+	}
+}
+
 void inserirInicio(Lista *lista, int valor){
 	//parametro o endereço da lista, e o tipo de valor (Lista = estrutura, lista = ponteiro)
 	No *novo = (No*)malloc(sizeof(No)); //comando para alocação de memória
@@ -101,7 +131,7 @@ int main(void){
 	
 	printf("Insira a operacao desejada:");
 	do{
-		printf("\n1- Inserir no inicio\n2- Imprimir\n3- Inserir no Fim\n4- Remover um valor\n5- Sair");
+		printf("\n1- Inserir no inicio\n2- Imprimir\n3- Inserir no Fim\n4- Remover um valor\n5-Dividir Lista\n6- Sair");
 		scanf("%d", &op);
 		switch (op){
 			case 1:
@@ -122,9 +152,12 @@ int main(void){
 				scanf("%d", &val);
 				remover(&lista, val);
 				break;
+			case 5:
+				dividirLista(&lista, &listaI, &listaP);
+				break;
 		}
 	
-	}while(op != 5);
+	}while(op != 6);
 	
-	return 0;	
+	return 0;
 }
