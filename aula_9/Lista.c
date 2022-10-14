@@ -131,7 +131,7 @@ int main(void){
 	
 	printf("Insira a operacao desejada:");
 	do{
-		printf("\n1- Inserir no inicio\n2- Imprimir\n3- Inserir no Fim\n4- Remover um valor\n5-Dividir Lista\n6- Sair");
+		printf("\n1- Inserir no inicio\n2- Imprimir\n3- Inserir no Fim\n4- Remover um valor\n5-Dividir Lista\n6- Sair\n7-Mostrar listas\n");
 		scanf("%d", &op);
 		switch (op){
 			case 1:
@@ -155,6 +155,13 @@ int main(void){
 			case 5:
 				dividirLista(&lista, &listaI, &listaP);
 				break;
+			case 7:
+				printf("Lista original\n");
+				imprimir(&lista);
+				printf("Lista par\n");
+				imprimir(&listaP);
+				printf("Lista impar\n");
+				imprimir(&listaI);
 		}
 	
 	}while(op != 6);
