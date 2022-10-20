@@ -60,7 +60,7 @@ int main(void){
 	struct Fila umaFila;
 	
 	//cria a fila
-	printf("\nCpacidade da fila? ");
+	printf("\nCapacidade da fila? ");
 	scanf("%d", &capa);
 	criarFila(&umaFila, capa);
 	
@@ -71,8 +71,8 @@ int main(void){
 		scanf("%d", &opcao);
 		
 		switch(opcao){
-			case 0: exit(0);
-			case 1: //insere elemento
+			case 0: exit(0); //sair
+			case 1: //insere
 				if(estaCheia(&umaFila)){
 					printf("\nErro: Fila cheia\n\n");
 				}
@@ -82,7 +82,7 @@ int main(void){
 					inserir(&umaFila, valor);
 				}
 				break;
-			case 2:
+			case 2: //remover
 				if(estaVazia(&umaFila)){
 					printf("\nErro: Fila vazia\n\n");
 				}
@@ -91,7 +91,7 @@ int main(void){
 					printf("\n%1f removido com sucesso\n\n");
 				}
 				break;
-			case 3:
+			case 3: //mostra
 				if(estaVazia(&umaFila)){
 					printf("\nErro: Fila vazia\n\n");
 				}
