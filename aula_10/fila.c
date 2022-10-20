@@ -45,12 +45,12 @@ int estaCheia ( struct Fila *f){
 
 void mostrarFila( struct Fila *f){
 	int cont, i;
-	for(cont=0, i= f->primeiro; i < f->nItens; cont+){
+	for(cont=0, i= f->primeiro; cont < f->nItens; cont++){
 		printf("%.2f\t", f->dados[i++]);
 		if(i == f->capacidade){
 			i = 0;
 		}
-	printf("\n\n")
+	printf("\n\n");
 	}
 }
 
@@ -74,16 +74,33 @@ int main(void){
 			case 0: exit(0);
 			case 1: //insere elemento
 				if(estaCheia(&umaFila)){
-					printf("Erro: Fila cheia\n\n");
+					printf("\nErro: Fila cheia\n\n");
 				}
 				else {
-					printf("Insira o valor a ser inserido: \n");
+					printf("\nInsira o valor a ser inserido: \n");
 					scanf("%f", &valor);
 					inserir(&umaFila, valor);
+				}
 				break;
 			case 2:
-				if
+				if(estaVazia(&umaFila)){
+					printf("\nErro: Fila vazia\n\n");
+				}
+				else{
+					valor = remover(&umaFila);
+					printf("\n%1f removido com sucesso\n\n");
+				}
+				break;
+			case 3:
+				if(estaVazia(&umaFila)){
+					printf("\nErro: Fila vazia\n\n");
+				}
+				else{	
+					mostrarFila(&umaFila);
+				}
+				break;
+			default:
+				printf("\n\nErro: Opcao nao encontrada\n\n\n");
+			}
 		}
 	}
-	
-}
