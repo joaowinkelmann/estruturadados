@@ -103,5 +103,8 @@ int main(){
 	printf("Arvore em pos-ordem:\n");
 	arvore_Busca_pos_Ordem(Raiz);
 	printf("\n\n");
+	
+	arvore_Destrutor(Raiz);
+	return 0;
 }
 
