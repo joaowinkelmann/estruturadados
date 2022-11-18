@@ -231,7 +231,7 @@ void ler_grafo(char caminho[100]){
 					flag = 1; //grafo invalido, vertice com valor negativo
 					return;
 				}
-				insere_adjacente(lista_adj, v, sucesor, peso);
+				insere_adjacente(lista_adj, v, succesor, peso);
 				fscanf(arquivo, "%d", sucessor);
 				fscanf(arquivo, "%d", peso);
 			}
